@@ -1,0 +1,12 @@
+
+#ignore
+plugins.tar.gz/
+themes.tar.gz/
+themes/twentytwentyfive
+themes/twentytwentyfour
+themes/Elsner-Revemp/assets/images
+themes/Elsner-Revemp/assets/webfonts
+themes/Elsner-Revemp/node_modules
+themes/Elsner-Revemp/==ultimate-member
+themes/==export-posts-csv.php
+themes/==template-testimonials.php
