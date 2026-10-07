@@ -7,10 +7,10 @@ $page_excerpt = get_field('hire_developer_content', 'option');
 $page_excerpt = str_replace('%page_excerpt%', get_field('tech_excerpt', get_the_ID()), $page_excerpt);
 $link = get_field('hire_developer_link', 'option');
 $developer_logos = get_field('developer_logos', 'option');
-$current_url = $_SERVER['REQUEST_URI'];
+$current_url = isset($_SERVER['REQUEST_URI']) ? sanitize_text_field(wp_unslash($_SERVER['REQUEST_URI'])) : '';
 
 $parts = explode('-', $current_url);
-$value = $parts[1];
+$value = isset($parts[1]) ? preg_replace('/[^a-zA-Z0-9_]/', '', $parts[1]) : '';
 
 ?>
 <section class="hire-developer-banner padding-120 blue-section">
@@ -72,7 +72,7 @@ $value = $parts[1];
                                 <span class="timers"
                                     data-count="<?php the_sub_field('hire_count'); ?>"><?php the_sub_field('hire_count'); ?></span><span>+</span>
                                 <h5>
-                                    <?php echo str_replace('%tech_name%', ($value == 'mern' ? strtoupper($value) : ucfirst($value)), get_sub_field('hire_title')); ?>
+                                    <?php echo esc_html(str_replace('%tech_name%', ($value == 'mern' ? strtoupper($value) : ucfirst($value)), get_sub_field('hire_title'))); ?>
                                 </h5>
                             </div>
                         </div>

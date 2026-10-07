@@ -2,9 +2,9 @@
 // Retrieve the post ID from the $args array
 global $contact_form;
 $post_id = $args['post_id'];
-$current_url = $_SERVER['REQUEST_URI'];
+$current_url = isset($_SERVER['REQUEST_URI']) ? sanitize_text_field(wp_unslash($_SERVER['REQUEST_URI'])) : '';
 $parts = explode('-', $current_url);
-$value = $parts[1];
+$value = isset($parts[1]) ? preg_replace('/[^a-zA-Z0-9_]/', '', $parts[1]) : '';
 
 ?>
 <section class="request-quote padding-120 mt-5">
@@ -24,7 +24,7 @@ $value = $parts[1];
                     <h3 class="white-text">
                         <?php
                             $developerType = ($value == 'mern') ? strtoupper($value) : ucfirst($value);
-                            echo "Hire a $developerType Developer Now!";
+                            echo esc_html("Hire a $developerType Developer Now!");
                         ?>
                     </h3>
                     <div class="form-quote">

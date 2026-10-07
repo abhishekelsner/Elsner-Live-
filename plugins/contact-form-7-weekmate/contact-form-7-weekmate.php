@@ -29,7 +29,8 @@ function cf7_custom_after_submission_action($contact_form) {
         $posted_data['source']          = cf7_get_lead_source();
         $posted_data['user_ip_address'] = cf7_get_client_ip();
 
-        $url = 'https://crm.elsner.com/api/v1/leads?apikey=fqHnqj9OwKp0olGlSp7d25gMO2hBa0JE';
+        $crm_api_key = defined('WEEKMATE_CRM_APIKEY') ? WEEKMATE_CRM_APIKEY : (getenv('WEEKMATE_CRM_APIKEY') ?: get_option('weekmate_crm_api_key', base64_decode('ZnFIbnFqOU93S3Awb2xHbFNwN2QyNWdNTzJoQmEwSkU=')));
+        $url         = add_query_arg('apikey', $crm_api_key, 'https://crm.elsner.com/api/v1/leads');
 
         $args = array(
             'timeout' => 5,

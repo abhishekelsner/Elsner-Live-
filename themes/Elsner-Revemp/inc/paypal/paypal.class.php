@@ -214,9 +214,9 @@
 				curl_setopt($ch, CURLOPT_VERBOSE, 1);
 				//curl_setopt($ch, CURLOPT_SSL_CIPHER_LIST, 'TLSv1');
 				
-				// Turn off the server and peer verification (TrustManager Concept).
-				curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-				curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+				// Enable server and peer verification for secure SSL/TLS connection.
+				curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, TRUE);
+				curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
 			
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 				curl_setopt($ch, CURLOPT_POST, 1);
