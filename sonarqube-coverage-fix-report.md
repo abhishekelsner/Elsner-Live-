@@ -169,6 +169,8 @@ jobs:
           args: >
             -Dsonar.projectKey=abhishekelsner_Elsner-Live
             -Dsonar.organization=abhishekelsner
+            -Dsonar.tests=tests
+            -Dsonar.coverage.exclusions=tests/**,jest.config.js
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
             -Dsonar.php.coverage.reportPaths=coverage/clover.xml
 ```

@@ -25,37 +25,55 @@ class GlobalTemplatesTest extends TestCase
 
     public function testHireDeveloperBannerSectionRendering(): void
     {
-        $html = $this->renderTemplate('themes/Elsner-Revemp/template-parts/global-template/hire-developer-banner-section.php', ['post_id' => 123]);
-        $this->assertNotEmpty($html);
-        $this->assertStringContainsString('hire-developer-banner', $html);
+        $html1 = $this->renderTemplate('themes/Elsner-Revemp/template-parts/global-template/hire-developer-banner-section.php', ['post_id' => 123], '/hire-mern-developer/');
+        $this->assertNotEmpty($html1);
+        $this->assertStringContainsString('hire-developer-banner', $html1);
+
+        $html2 = $this->renderTemplate('themes/Elsner-Revemp/template-parts/global-template/hire-developer-banner-section.php', ['post_id' => 123], '/hire-php-developer/');
+        $this->assertNotEmpty($html2);
     }
 
     public function testHiringStepSectionRendering(): void
     {
-        $html = $this->renderTemplate('themes/Elsner-Revemp/template-parts/global-template/hiring-step-section.php', ['post_id' => 123]);
-        $this->assertNotEmpty($html);
-        $this->assertStringContainsString('hiring-step-wrapper', $html);
+        $html1 = $this->renderTemplate('themes/Elsner-Revemp/template-parts/global-template/hiring-step-section.php', ['post_id' => 123], '/hire-mern-developer/');
+        $this->assertNotEmpty($html1);
+        $this->assertStringContainsString('hiring-step-wrapper', $html1);
+
+        $html2 = $this->renderTemplate('themes/Elsner-Revemp/template-parts/global-template/hiring-step-section.php', ['post_id' => 123], '/hire-magento-developer/');
+        $this->assertNotEmpty($html2);
+
+        $html3 = $this->renderTemplate('themes/Elsner-Revemp/template-parts/global-template/hiring-step-section.php', ['post_id' => 123], '/hire-php-developer/');
+        $this->assertNotEmpty($html3);
     }
 
     public function testRequestQuoteSectionRendering(): void
     {
-        $html = $this->renderTemplate('themes/Elsner-Revemp/template-parts/global-template/request-quote-section.php', ['post_id' => 123]);
-        $this->assertNotEmpty($html);
-        $this->assertStringContainsString('request-quote', $html);
+        $html1 = $this->renderTemplate('themes/Elsner-Revemp/template-parts/global-template/request-quote-section.php', ['post_id' => 123], '/hire-mern-developer/');
+        $this->assertNotEmpty($html1);
+        $this->assertStringContainsString('request-quote', $html1);
+
+        $html2 = $this->renderTemplate('themes/Elsner-Revemp/template-parts/global-template/request-quote-section.php', ['post_id' => 123], '/hire-php-developer/');
+        $this->assertNotEmpty($html2);
     }
 
     public function testTalkToUsSectionRendering(): void
     {
-        $html = $this->renderTemplate('themes/Elsner-Revemp/template-parts/global-template/talk-to-us-section.php', ['post_id' => 123]);
-        $this->assertNotEmpty($html);
-        $this->assertStringContainsString('talk-us-content', $html);
+        $html1 = $this->renderTemplate('themes/Elsner-Revemp/template-parts/global-template/talk-to-us-section.php', ['post_id' => 123], '/hire-mern-developer/');
+        $this->assertNotEmpty($html1);
+        $this->assertStringContainsString('talk-us-content', $html1);
+
+        $html2 = $this->renderTemplate('themes/Elsner-Revemp/template-parts/global-template/talk-to-us-section.php', ['post_id' => 123], '/hire-php-developer/');
+        $this->assertNotEmpty($html2);
     }
 
     public function testWhyHireSectionRendering(): void
     {
-        $html = $this->renderTemplate('themes/Elsner-Revemp/template-parts/global-template/why-hire-section.php', ['post_id' => 123]);
-        $this->assertNotEmpty($html);
-        $this->assertStringContainsString('why-hire', $html);
+        $html1 = $this->renderTemplate('themes/Elsner-Revemp/template-parts/global-template/why-hire-section.php', ['post_id' => 123], '/hire-mern-developer/');
+        $this->assertNotEmpty($html1);
+        $this->assertStringContainsString('why-hire', $html1);
+
+        $html2 = $this->renderTemplate('themes/Elsner-Revemp/template-parts/global-template/why-hire-section.php', ['post_id' => 123], '/hire-php-developer/');
+        $this->assertNotEmpty($html2);
     }
 
     public function testPostContentRendering(): void
