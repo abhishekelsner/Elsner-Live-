@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.5/phpunit.xsd"
+         bootstrap="tests/bootstrap.php"
+         colors="true"
+         cacheDirectory=".phpunit.cache">
+    <testsuites>
+        <testsuite name="Unit">
+            <directory>tests/php</directory>
+        </testsuite>
+    </testsuites>
+    <source>
+        <include>
+            <file>plugins/contact-form-7-weekmate/contact-form-7-weekmate.php</file>
+            <file>themes/Elsner-Revemp/functions/other-functions.php</file>
+            <file>themes/Elsner-Revemp/inc/paypal/paypal.class.php</file>
+            <file>themes/Elsner-Revemp/single-case-study.php</file>
+            <file>themes/Elsner-Revemp/single-portfolio.php</file>
+            <file>themes/Elsner-Revemp/single-product.php</file>
+            <file>themes/Elsner-Revemp/single-solution.php</file>
+            <file>themes/Elsner-Revemp/single.php</file>
+            <file>themes/Elsner-Revemp/template-parts/functions.php</file>
+            <file>themes/Elsner-Revemp/template-parts/global-template/hire-developer-banner-section.php</file>
+            <file>themes/Elsner-Revemp/template-parts/global-template/hiring-step-section.php</file>
+            <file>themes/Elsner-Revemp/template-parts/global-template/request-quote-section.php</file>
+            <file>themes/Elsner-Revemp/template-parts/global-template/talk-to-us-section.php</file>
+            <file>themes/Elsner-Revemp/template-parts/global-template/why-hire-section.php</file>
+            <file>themes/Elsner-Revemp/template-parts/single/post-content.php</file>
+        </include>
+    </source>
+</phpunit>
+
+

@@ -1,0 +1,25 @@
+{
+  "name": "elsner-live",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Elsner-Live automated SonarQube Cloud issue export and scoring system",
+  "scripts": {
+    "test:js": "jest",
+    "test:php": "phpunit",
+    "test": "npm run test:js && npm run test:php",
+    "sonarqube:report": "node scripts/sonarqube/index.js",
+    "sonarqube:export": "node scripts/sonarqube/export-issues.js",
+    "sonarqube:score": "node scripts/sonarqube/calculate-score.js"
+  },
+  "keywords": [
+    "sonarqube",
+    "sonarcloud",
+    "quality-gate",
+    "code-quality"
+  ],
+  "author": "abhishekelsner",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "jest": "^30.5.2"
+  }
+}

@@ -15,10 +15,16 @@ themes/==template-testimonials.php
 .env.*
 .ENV
 
+# Dependencies and Build Artifacts
+node_modules/
+vendor/
+coverage/
+.phpunit.cache/
+
 # SonarQube Scripts & Tooling
 scripts/
-package.json
 .env.example
+
 
 # SonarQube JSON exports and reports
 sonarqube-issues.json
